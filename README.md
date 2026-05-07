@@ -11,20 +11,20 @@ TeamODD 제 2회 단기 프로젝트
 - 정답 순서와 플레이타임에 따른 점수 시스템 구현
 
 📌 Tech Stack
-- 
+- UI_Production
+- Sprtie
+- TextMeshPro
 
 📌 Key Implementation
-- PlayerInputManager 작성 <br />
-- 리지디바디의 중력 구현 -> rb.gravityScale = -Physics2D.gravity.y;
-- Bounds를 통해 플레이어의 발위치를 측정하여 플랫포머 특유의 더블 점프와 발판 버그를 대응 
-
+- DialogueParser를 주로 작성 <br />
+- UI_Production을 주로 사용하여 Sprtie 기반 애니메이션을 작업함
+- 
   
 📌 Trouble Shooting
-- 객체지향 프로그래밍 구현 문제
-  -> 관련 자료들을 직접 찾아보면서 구현
-  -> 멘토의 조언
+- 게임 프로그래밍을 처음 하는 거라 팀원이 협업 작업을 어려워 함.
+- Unity 관련 지식이 전무했다. => ChatGpt와 Unity Document를 사용하여 부분 해결
 
 📌 What I Learned
-- 짧은 시간 내에 과제를 완수해야 한다는 점. 때문에 여유를 부릴 수 없다.
-- 객체지향프로그래밍에 대해서 그 감을 알아갔다.
+- 게임 개발이 무엇인지 정확히 깨달음.
+- 코딩 관련 CleanCode 기법이나 협업 관련 작성 방식에 대해서 알아감.
 - 
