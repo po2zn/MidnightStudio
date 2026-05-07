@@ -18,6 +18,7 @@ TeamODD 제 2회 단기 프로젝트
 📌 Key Implementation
 - DialogueParser를 주로 작성 <br />
 - UI_Production을 주로 사용하여 Sprtie 기반 애니메이션을 작업함
+- CSV기반 데이터를 불러오고 해당 데이터에 있는 화자와 act 상태에 따라 사진을 바꿈
 ```
  private Sprite LoadActSprite(string speaker, string act)
     {
@@ -49,7 +50,31 @@ TeamODD 제 2회 단기 프로젝트
     }
 ```
 ```
+    private void LoadCSV(string story) //로드 및 저장 
+    {
+        var csvData = CSVReader.Read(story); // Resources/dialogue.csv // 임시 수정-story1_0_3_0
+        //story1_0_0_0
+        foreach (var row in csvData)
+        {
+            if (!row.ContainsKey("keys") || !row.ContainsKey("speaker") || !row.ContainsKey("act") || !row.ContainsKey("dialogue") || !row.ContainsKey("information"))
+                continue;
 
+            string index = row["keys"].ToString().Trim();
+            string speaker = row["speaker"].ToString().Trim();
+            string animation = row["act"].ToString().Trim();
+            string dialogue = row["dialogue"].ToString().Trim();
+            string information = "";
+            if (row.ContainsKey("information") && row["information"] != null && !string.IsNullOrWhiteSpace(row["information"].ToString()))
+            {
+                information = row["information"].ToString().Trim();
+            }
+
+
+
+            if (!allAnswers.ContainsKey(index))
+                allAnswers.Add(index, new string[] { speaker, dialogue, animation, information });
+        }
+}
 ```
   
 📌 Trouble Shooting
